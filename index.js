@@ -1,4 +1,8 @@
-//calculate the average going wage:
+let flyer = document.querySelector('h1');
+let title = document.createElement("p");
+title.textContent = ("Freelancer Forum");
+flyer.append(title);
+
 const averageWage = function () {
   let total = 0;
   let length = workers.length;
@@ -8,10 +12,6 @@ const averageWage = function () {
   }
   return total / length;
 }
-
-// let wage = document.querySelector('#money');
-// let price = replace.textContent(???, averageWage())
-// wage.append(price);
 
 const workers = [
   { name: "Dr. Slice", price: 25, occupation: "gardener" },
@@ -26,9 +26,19 @@ const workers = [
 
 
 
+let wage = document.querySelector('h3');
+let newWage = document.createElement("p");
+newWage.innerText = ("The average starting wage is $" + averageWage())
+wage.append(newWage);
+
+
+
 const addWorkerIntervalId = setInterval(addWorker, 3000);
 render();
 
+// if setInterval > 7 {
+//   clearInterval(addWorkerIntervalId)
+// }
 
 function render() {
   const info = document.querySelector('#information');
@@ -69,6 +79,7 @@ function render() {
 
 
 setInterval();
+
 
 function addWorker() {
   const newNew = workers[Math.floor(Math.random() * workers.length)];
